@@ -1,0 +1,25 @@
+<div ng-controller="DetailParkingCtrl" id="DetailParking">
+
+<div id="custom_html2" ng-click="custom_html2Tap()">
+<div>
+  <h1>Parking : {{ parkingmsa.id }}</h1>
+</div>
+
+</div>
+
+<div id="toggle0" ng-click="toggle0Tap()">
+<ul class="list">
+  <li class="item item-toggle">
+     {{ parkingmsa.isEmpty }}
+     <label class="toggle toggle-positive">
+       <input type="checkbox" ng-model="toggle0.value">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+</ul>
+
+</div>
+
+</div>

@@ -1,0 +1,26 @@
+<div ng-controller="CarparkHomeCtrl" id="CarparkHome">
+
+<div id="title_home" ng-click="title_homeTap()">
+<h1>carparks</h1>
+
+</div>
+
+<div id="list_test">
+<div>
+  <div class="list">
+    <a
+      href="#"
+      class="item item-icon-right"
+      ng-repeat="item in carparkmsa"
+      ng-bind="item.name"
+      ng-click="list_testListTap(item)">
+      
+        <i class="icon ion-ios7-arrow-right"></i>
+      
+    </a>
+  </div>
+</div>
+
+</div>
+
+</div>

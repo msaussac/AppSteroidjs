@@ -1,0 +1,198 @@
+#%RAML 0.8
+title: Steroids Data
+mediaType: application/json
+baseUri: http://rest-api.appgyver.com/v1/
+
+traits:
+  - securedBySteroidsApiKey:
+      headers:
+        steroidsApiKey:
+          type: string
+          example: identificationhashgoeshere
+          default: 3ddc9cc016ff1cba7caed3aeafa054a31e20502c94167a2c1230e4553e62ec74
+        steroidsAppId:
+          type: integer
+          example: 1234
+          default: 18014
+
+
+
+/carparkmsa:
+  description: |
+    {
+      "resourceName": "carparkmsa"
+    }
+  get:
+    is: [ securedBySteroidsApiKey ]
+    description: |
+      {
+        "action": "collection"
+      }
+  
+    responses:
+      200:
+        description: |
+          {
+          }
+  
+        body:
+          application/json:
+            schema: |
+              {"$schema":"http://json-schema.org/schema","title":"carparkmsa collection","type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical carparkmsa representation","properties":{"parking_number":{"type":"integer"},"name":{"type":"string"},"parkings":{"type":"array"},"id":{"type":"integer"}},"required":[]}}
+  
+  post:
+    is: [ securedBySteroidsApiKey ]
+    description: |
+      {
+        "action": "create"
+      }
+  
+    responses:
+      200:
+        description: |
+          {
+          }
+  
+        body:
+          application/json:
+            schema: |
+              {"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical carparkmsa representation","properties":{"parking_number":{"type":"integer"},"name":{"type":"string"},"parkings":{"type":"array"},"id":{"type":"integer"}},"required":[]}
+  
+
+  /{id}:
+    get:
+      is: [ securedBySteroidsApiKey ]
+      description: |
+        {
+          "action": "find"
+        }
+    
+      responses:
+        200:
+          description: |
+            {
+            }
+    
+          body:
+            application/json:
+              schema: |
+                {"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical carparkmsa representation","properties":{"parking_number":{"type":"integer"},"name":{"type":"string"},"parkings":{"type":"array"},"id":{"type":"integer"}},"required":[]}
+    
+    put:
+      is: [ securedBySteroidsApiKey ]
+      description: |
+        {
+          "action": "update"
+        }
+    
+      responses:
+        200:
+          description: |
+            {
+            }
+    
+          body:
+            application/json:
+              schema: |
+                {"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical carparkmsa representation","properties":{"parking_number":{"type":"integer"},"name":{"type":"string"},"parkings":{"type":"array"},"id":{"type":"integer"}},"required":[]}
+    
+    delete:
+      is: [ securedBySteroidsApiKey ]
+      description: |
+        {
+          "action": "destroy"
+        }
+    
+      responses:
+        200:
+
+/parkingmsa:
+  description: |
+    {
+      "resourceName": "parkingmsa"
+    }
+  get:
+    is: [ securedBySteroidsApiKey ]
+    description: |
+      {
+        "action": "collection"
+      }
+  
+    responses:
+      200:
+        description: |
+          {
+          }
+  
+        body:
+          application/json:
+            schema: |
+              {"$schema":"http://json-schema.org/schema","title":"parkingmsa collection","type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical parkingmsa representation","properties":{"isEmpty":{"type":"boolean"},"id":{"type":"integer"}},"required":[]}}
+  
+  post:
+    is: [ securedBySteroidsApiKey ]
+    description: |
+      {
+        "action": "create"
+      }
+  
+    responses:
+      200:
+        description: |
+          {
+          }
+  
+        body:
+          application/json:
+            schema: |
+              {"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical parkingmsa representation","properties":{"isEmpty":{"type":"boolean"},"id":{"type":"integer"}},"required":[]}
+  
+
+  /{id}:
+    get:
+      is: [ securedBySteroidsApiKey ]
+      description: |
+        {
+          "action": "find"
+        }
+    
+      responses:
+        200:
+          description: |
+            {
+            }
+    
+          body:
+            application/json:
+              schema: |
+                {"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical parkingmsa representation","properties":{"isEmpty":{"type":"boolean"},"id":{"type":"integer"}},"required":[]}
+    
+    put:
+      is: [ securedBySteroidsApiKey ]
+      description: |
+        {
+          "action": "update"
+        }
+    
+      responses:
+        200:
+          description: |
+            {
+            }
+    
+          body:
+            application/json:
+              schema: |
+                {"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical parkingmsa representation","properties":{"isEmpty":{"type":"boolean"},"id":{"type":"integer"}},"required":[]}
+    
+    delete:
+      is: [ securedBySteroidsApiKey ]
+      description: |
+        {
+          "action": "destroy"
+        }
+    
+      responses:
+        200:
+
+

@@ -1,0 +1,46 @@
+<div ng-controller="DetailCarparkCtrl" id="DetailCarpark">
+
+<div id="title0" ng-click="title0Tap()">
+<h1>{{ carparkmsa.name }}</h1>
+
+</div>
+
+<div id="text_field_with_stacked_label2" ng-click="text_field_with_stacked_label2Tap()">
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">nom</span>
+    <input type="text" placeholder="{{ carparkmsa.name }}" ng-model="text_field_with_stacked_label2.value">
+  </label>
+</div>
+
+</div>
+
+<div id="text_field_with_stacked_label1" ng-click="text_field_with_stacked_label1Tap()">
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">nombre de parkings</span>
+    <input type="text" placeholder="{{ carparkmsa.parking_number }}" ng-model="text_field_with_stacked_label1.value">
+  </label>
+</div>
+
+</div>
+
+<div id="list3">
+<div>
+  <div class="list">
+    <a
+      href="#"
+      class="item item-icon-right"
+      ng-repeat="item in parkingmsa"
+      ng-bind="item.id"
+      ng-click="list3ListTap(item)">
+      
+        <i class="icon ion-ios7-arrow-right"></i>
+      
+    </a>
+  </div>
+</div>
+
+</div>
+
+</div>
